@@ -9,7 +9,7 @@ RUN export ARCH=$(case ${TARGETPLATFORM:-linux/amd64} in \
     "linux/arm64")   echo "aarch64" ;; \
     *)               echo ""        ;; esac) \
     && echo "ARCH=$ARCH"
-RUN wget -qO- https://files.openscad.org/OpenSCAD-${OPENSCAD_VERSION}-${ARCH}.AppImage
+RUN wget https://files.openscad.org/OpenSCAD-${OPENSCAD_VERSION}-${ARCH}.AppImage
 RUN mv OpenSCAD-${OPENSCAD_VERSION}-${ARCH}.AppImage /OpenSCAD.AppImage
 RUN chmod a+x OpenSCAD.AppImage
 ADD openscad /usr/local/bin/openscad
