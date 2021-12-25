@@ -1,0 +1,14 @@
+#!/bin/bash
+# https://github.com/openscad/openscad/issues/1798#issuecomment-997619408
+# xvfb is a fake display which will let openscad run to generate .png files, but
+# it can't be used to actually display the GUI. 
+# It may be possible to share an X11 socket between the host (mac/linux) and the docker
+# container to _actually_ run openscad in a GUI.
+# docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix openscad
+# http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/
+# I've chosen not to do that here, since the intent is to run spuder/openscad in a
+# github actions CI environment which likely will never support true X11
+# TODO: Make it optional so that if $DISPLAY exists, attempt to use that
+# But if not, then fall back to xvfb
+Xvfb :99 & export DISPLAY=:99
+/OpenSCAD-2021.01-x86_64.AppImage --appimage-extract-and-run $@
