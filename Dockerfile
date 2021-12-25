@@ -3,7 +3,7 @@ ARG TARGETPLATFORM
 RUN echo "I'm building for $TARGETPLATFORM"
 ARG OPENSCAD_VERSION=2021.01
 RUN apt update && apt install -y -qq wget xvfb libfontconfig libharfbuzz-dev libgl1
-ENV ARCH=$(case ${TARGETPLATFORM:-linux/amd64} in \
+RUN export ARCH=$(case ${TARGETPLATFORM:-linux/amd64} in \
     "linux/amd64")   echo "x86_64"  ;; \
     "linux/arm/v7")  echo "armhf"   ;; \
     "linux/arm64")   echo "aarch64" ;; \
