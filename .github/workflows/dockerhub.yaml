@@ -13,9 +13,9 @@ jobs:
       matrix:
         include:
           - download_arch: x86_64
-            platforms: [linux/amd64]
+            platforms: linux/amd64
           - download_arch: aarch64
-            platforms: [linux/arm64]
+            platforms: linux/arm64
     steps:
       -
         name: Checkout
