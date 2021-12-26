@@ -57,6 +57,8 @@ git tag 2021.01
 
 ### Limitations
 
-This container is only intended for command line usage of openscad (e.g. in a CI/CD pipeline or scripts to manipulate STL files). Running a full QT/X11 environment from docker is probably possible, but is outside the scope of this repo. (If you have the skills to get it working, pull request welcome). 
+This container is only intended for command line usage of openscad (e.g. in a CI/CD pipeline or scripts to manipulate STL files). Running a full QT/X11 environment from docker is probably possible, but is outside the scope of this repo. (If you have the skills to get it working, pull request welcome [github.com/spuder/openscad](https://hub.docker.com/repository/docker/spuder/openscad )). 
+
+## Additional Resources
 
 https://github.com/openscad/openscad/issues/1798#issuecomment-997619408
