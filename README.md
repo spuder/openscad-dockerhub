@@ -2,6 +2,10 @@
 
 A docker image containing a fairly recent version of openscad installed. (Newer than what is currently available in apt repos)
 
+| | |
+|---|---|
+|DockerHub| https://hub.docker.com/repository/docker/spuder/openscad | 
+|Github| https://github.com/spuder/openscad-dockerhub | 
 ## Usage
 
 Basic example to print `--version`
@@ -24,6 +28,31 @@ Building from source
 The openscad images are for pipelines, not for actually running openscad
 
 [Additional Context](https://github.com/openscad/docker-openscad/issues/3#issuecomment-1001055766)
+
+
+### Releasing A new version
+
+To upgrade the version that is deployed.
+
+The files are downloaded from `https://files.openscad.org/` Check that URL for available versions. 
+
+1. Modify `OPENSCAD_VERSION` in `.github/workflows/dockerhub.yaml`
+
+```
+          build-args: |
+            OPENSCAD_VERSION=2021.01
+```
+
+2. Commit & create git tag
+```
+git tag 2021.01
+```
+
+3. Push tags
+
+4. Create release in github release page
+
+5. Watch github actions deploy. 
 
 ### Limitations
 
