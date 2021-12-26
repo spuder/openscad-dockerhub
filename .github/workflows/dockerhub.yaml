@@ -35,3 +35,11 @@ jobs:
           tags: spuder/openscad:latest
           build-args: |
             OPENSCAD_VERSION=2021.01
+      - 
+        name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        env:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: spuder/openscad
+          short-description: See https://github.com/spuder/openscad-dockerhub
