@@ -11,4 +11,5 @@
 # TODO: Make it optional so that if $DISPLAY exists, attempt to use that
 # But if not, then fall back to xvfb
 Xvfb :99 & export DISPLAY=:99
-/OpenSCAD.AppImage --appimage-extract-and-run $@
+echo "Executing /OpenSCAD.AppImage --appimage-extract-and-run \"$@\""
+/OpenSCAD.AppImage --appimage-extract-and-run "$@"
