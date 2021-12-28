@@ -1,5 +1,21 @@
 # spuder/openscad
 
+### 🛑 `spuder/openscad` has been replaced by `openscad/openscad`
+
+```
+docker pull openscad/openscad:2021.01
+```
+
+Openscad has started offering [official openscad docker images](https://github.com/openscad/docker-openscad/issues/3#issuecomment-1001696690). Use those instead. [https://hub.docker.com/repository/docker/openscad/openscad](https://hub.docker.com/repository/docker/openscad/openscad)
+
+```
+https://hub.docker.com/repository/docker/openscad/openscad
+```
+
+---
+
+# Legacy
+
 A docker image containing a fairly recent version of openscad installed. (Newer than what is currently available in apt repos)
 
 | | |
